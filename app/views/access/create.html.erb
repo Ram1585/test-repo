@@ -1,0 +1,11 @@
+<h1> Create Member Accesses </h1>
+
+<%= form_tag(controller:'access',action:"assign",method:"post") do %>
+<%= label_tag(:member_id,Choose Member) %>
+<%= select_tag(:member_id,options_for_select([
+    [val1,1],
+    [val2,2],
+    [val3,3]
+])) %>
+<%= submit_tag('create roles')%>
+<% end %>

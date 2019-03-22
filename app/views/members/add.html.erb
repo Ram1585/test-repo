@@ -1,0 +1,15 @@
+<h3>Add New Member</h3>
+
+<%= @showdata %>
+<%= form_tag(controller:'members',action:'create',method:'post') do %>
+  <%= label_tag(:mem_name,"Member Name") %><br/>
+  <%= text_field_tag(:mem_name) %><br/><br/>
+
+  <%= label_tag(:mem_email,"Member Email") %><br/>
+  <%= text_field_tag(:mem_email) %><br/><br/>
+
+  <%= label_tag(:mem_pwd,"Member Password") %><br/>
+  <%= text_field_tag(:mem_pwd) %><br/><br/>
+
+  <%= submit_tag('Add Member')%>
+<% end %>

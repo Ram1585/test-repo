@@ -1,0 +1,9 @@
+<h2>Members list</h2>
+<table>
+<% @lists.each do |mem| %>
+  <tr>
+  <td><%= mem.mem_name %></td>
+  <td><%= mem.mem_email %></td>
+  </tr>
+<% end %>  
+</table>  

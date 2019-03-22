@@ -1,0 +1,61 @@
+starting postgresql server
+ pg_ctl -D /usr/local/var/postgres start
+
+start local ror server: 
+ rails server
+
+create new ror project: 
+ rails new appname -d postgresql
+
+check routes: 
+ rake routes
+
+create test,dev & prod Db after editing database.yml: 
+ rake db:create
+
+creating a route in config/routes.rb
+  get 'get request string', to: 'controller path as string' 
+  ex: get 'welcome', to:'welcome#home'
+  for homepage: root "welcome#home"
+
+creating anchor link via ror
+  <%= link_to: 'text string' , router path with sufffix _path as value %>
+  ex: <%= link_to: 'home', welcome_path %>
+  adding class and id attributes to the a link
+  ex: <%= link_to: 'home', welcome_path, :id=>"Home", :class=>"Btn" %>
+
+DB Table Creation
+  create migration file
+  rails generate migration create_members
+
+  open newly genrated migration file and enter table schema
+  eg:
+    create_table : members do |t|
+    t.string: "mem_name"
+    t.string: "mem_email"
+    t.string: "mem_password"
+    t.timestamps
+    end
+
+  run migrations to create tables in DB
+  rake db:migrate
+
+  To undo last migrations in table
+  rake db:rollback
+
+  in order to create new field in the existing table, create new migration file and add columns
+  rails generate migration add_columns_to_members
+
+    To add new column
+    add_column :members, :mem_status, :string     
+
+  rake db:migrate
+
+  
+
+
+
+ 
+
+
+
